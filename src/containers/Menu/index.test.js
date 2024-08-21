@@ -23,4 +23,5 @@ describe("When Menu is created", () => {
       expect(window.document.location.hash).toEqual("#contact");
     });
   });
-});
+  
+  });

@@ -1,5 +1,9 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+// import { DataProvider } from "../../contexts/DataContext";
 import Home from "./index";
+
+
+
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {
@@ -28,17 +32,37 @@ describe("When Form is created", () => {
 });
 
 
-describe("When a page is created", () => {
-  it("a list of events is displayed", () => {
-    // to implement
+describe("When a page is created",  () => {
+
+  it("a list of events is displayed", async () => {
+    // to implement Catégories
+    render(<Home />);
+    await screen.findByText("Catégories");
   })
-  it("a list a people is displayed", () => {
-    // to implement
+  
+  it("a list a people is displayed", async () => {
+    // to implement Samira
+    render(<Home />);
+    await screen.findByText("Samira");
+    await screen.findByText("Jean-baptiste");
+    await screen.findByText("Alice");
   })
-  it("a footer is displayed", () => {
+
+  
+  it("a footer is displayed",async  () => {
     // to implement
+    render(<Home />);
+    await screen.findByText("Notre derniére prestation");
+    await screen.findByText("Contactez-nous");
   })
-  it("an event card, with the last event, is displayed", () => {
+  
+  it("an event card, with the last event, is displayed", async () => {
     // to implement
+    render(    
+       <Home />
+    );
+    await screen.findByText("boom");
   })
+    
 });
+

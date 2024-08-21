@@ -55,7 +55,7 @@ describe("When Events is created", () => {
           <Events />
         </DataProvider>
       );
-      expect(await screen.findByText("An error occured")).toBeInTheDocument();
+      await screen.findByText("An error occured")
     });
   });
   describe("and we select a category", () => {
@@ -82,7 +82,7 @@ describe("When Events is created", () => {
         })
       );
 
-      await screen.findByText("Conférence #productCON");
+      await screen.findByText("Conférence #productCON")
       expect(screen.queryByText("Forum #productCON")).not.toBeInTheDocument();
     });
   });
