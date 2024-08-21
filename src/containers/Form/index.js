@@ -12,10 +12,12 @@ const Form = ({ onSuccess, onError }) => {
     async (evt) => {
       evt.preventDefault();
       setSending(true);
+      evt.target.reset()
       // We try to call mockContactApi
       try {
         await mockContactApi();
         setSending(false);
+        onSuccess()
       } catch (err) {
         setSending(false);
         onError(err);
@@ -36,7 +38,7 @@ const Form = ({ onSuccess, onError }) => {
             type="large"
             titleEmpty
           />
-          <Field placeholder="" label="Email" />
+          <Field type = {FIELD_TYPES.INPUT_MAIL} placeholder="exemple@email.com" label="Email" />
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
